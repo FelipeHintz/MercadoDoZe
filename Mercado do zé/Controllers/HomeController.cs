@@ -22,7 +22,7 @@ namespace Mercado_do_zé.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Página de contato";
 
             return View();
         }
