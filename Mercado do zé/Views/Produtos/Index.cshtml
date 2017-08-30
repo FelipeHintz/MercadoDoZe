@@ -1,24 +1,36 @@
 ﻿
-@model Mercado_do_zé.ViewModels.ProdutosIndexViewModel
+@model IEnumerable<Mercado_do_zé.Models.Produto>
 
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Produtos</h2>
+<center><h2>Produtos cadastrados</h2></center>
 
-@if (@Model.Produtos.Count > 0)
+@if (@Model.Any())
 {
     <table class="table table-bordered table-hover">
         <thead>
-            <tr><th>Produto</th></tr>
+            <tr>
+                <th class="col-sm-1">ID</th>
+                <th class="col-sm-9">Nome</th>
+                <th class="col-sm-2">Valor</th>
+            </tr>
         </thead>
         <tbody>
-            @foreach (var produto in Model.Produtos)
+            @foreach (var produto in Model)
             {
-                <tr><td>@produto.Nome</td></tr>
+                <tr>
+                    <td>@produto.Id</td>
+                    <td>@Html.ActionLink(@produto.Nome, "Detalhes", new { produto.Id })</td>
+                    <td>R$ @produto.Valor</td>
+                </tr>
             }
         </tbody>
     </table>
+}
+else
+{
+    <p>Não temos nenhum produto cadastrado</p>
 }

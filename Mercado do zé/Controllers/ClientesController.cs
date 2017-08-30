@@ -9,12 +9,32 @@ namespace Mercado_do_zé.Controllers
 {
     public class ClientesController : Controller
     {
-        //
-        // GET: /Clientes/
-        public ActionResult Random()
+        
+        public IEnumerable<Cliente> GetClientes()
         {
-            var cliente = new Cliente() { nome = "Zé" };
+            return new List<Cliente>
+            {
+                new Cliente {Nome = "Zé da Farmacia", Id = 1},
+                new Cliente {Nome = "Zé do Caixão", Id = 2}
+            };
+        }
+
+        public ActionResult Index()
+        {
+            var clientes = GetClientes();
+
+            return View(clientes);
+        }
+
+        public ActionResult Detalhes(int id)
+        {
+            var cliente = GetClientes().SingleOrDefault(c => c.Id == id);
+
+            if (cliente == null)
+                return HttpNotFound();
+
             return View(cliente);
         }
+
 	}
 }

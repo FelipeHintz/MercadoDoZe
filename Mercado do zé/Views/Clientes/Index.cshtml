@@ -1,5 +1,4 @@
-﻿
-@model Mercado_do_zé.ViewModels.ClientesIndexViewModel
+﻿@model IEnumerable<Mercado_do_zé.Models.Cliente>
 
 @{
     ViewBag.Title = "Index";
@@ -8,18 +7,21 @@
 
 <h2>Clientes</h2>
 
-@if (@Model.Clientes.Count > 0)
+@if (@Model.Any())
 {
     <table class="table table-bordered table-hover">
         <thead>
             <tr><th>Cliente</th></tr>
         </thead>
         <tbody>
-            @foreach (var cliente in Model.Clientes)
+            @foreach (var cliente in Model)
             {
                 <tr><td>@Html.ActionLink(@cliente.Nome, "Detalhes", new { cliente.Id })</td></tr>
             }
         </tbody>
     </table>
 }
-
+else
+{
+    <p>Não temos nenhum produto cadastrado</p>
+}
