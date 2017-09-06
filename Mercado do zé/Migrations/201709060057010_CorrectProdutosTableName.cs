@@ -3,16 +3,16 @@ namespace Mercado_do_zé.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class AddIsSubscribedToCustomer : DbMigration
+    public partial class CorrectProdutosTableName : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Clientes", "IsSubscribedToNewsletter", c => c.Boolean(nullable: false));
+            RenameTable(name: "dbo.Produtoes", newName: "Produtos");
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Clientes", "IsSubscribedToNewsletter");
+            RenameTable(name: "dbo.Produtos", newName: "Produtoes");
         }
     }
 }

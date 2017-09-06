@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace Mercado_do_zé.Models
 {
+    [Table("dbo.Produtos")]
 	public class Produto
 	{
 

@@ -7,13 +7,13 @@ namespace Mercado_do_zé.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class AddIsSubscribedToCustomer : IMigrationMetadata
+    public sealed partial class CorrectProdutosTableName : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddIsSubscribedToCustomer));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CorrectProdutosTableName));
         
         string IMigrationMetadata.Id
         {
-            get { return "201709060006404_AddIsSubscribedToCustomer"; }
+            get { return "201709060057010_CorrectProdutosTableName"; }
         }
         
         string IMigrationMetadata.Source

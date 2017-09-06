@@ -24,14 +24,14 @@ namespace Mercado_do_zé.Controllers
 
         public ActionResult Index()
         {
-            var clientes = _context.Clientes.Include(c => c.MembershipType).ToList();
+            var clientes = _context.Clientes.ToList();
 
             return View(clientes);
         }
 
         public ActionResult Detalhes(int id)
         {
-            var cliente = _context.Clientes.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
+            var cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
 
             if (cliente == null)
                 return HttpNotFound();
