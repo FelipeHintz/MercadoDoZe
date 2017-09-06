@@ -9,7 +9,18 @@ namespace Mercado_do_zé.Controllers
 {
     public class ClientesController : Controller
     {
-        
+        private ApplicationDbContext _context;
+
+        public ClientesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         public IEnumerable<Cliente> GetClientes()
         {
             return new List<Cliente>
