@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Mercado_do_zé.Models;
+using System.Data.Entity;
 
 namespace Mercado_do_zé.Controllers
 {
@@ -21,25 +22,16 @@ namespace Mercado_do_zé.Controllers
             _context.Dispose();
         }
 
-        public IEnumerable<Cliente> GetClientes()
-        {
-            return new List<Cliente>
-            {
-                new Cliente {Nome = "Zé da Farmacia", Id = 1},
-                new Cliente {Nome = "Zé do Caixão", Id = 2}
-            };
-        }
-
         public ActionResult Index()
         {
-            var clientes = GetClientes();
+            var clientes = _context.Clientes.Include(c => c.MembershipType).ToList();
 
             return View(clientes);
         }
 
         public ActionResult Detalhes(int id)
         {
-            var cliente = GetClientes().SingleOrDefault(c => c.Id == id);
+            var cliente = _context.Clientes.Include(c => c.MembershipType).SingleOrDefault(c => c.Id == id);
 
             if (cliente == null)
                 return HttpNotFound();
