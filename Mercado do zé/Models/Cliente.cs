@@ -12,5 +12,7 @@ namespace Mercado_do_zé.Models
 
         public string Nome { get; set;}
 
+        public bool IsSubscribedToNewsletter { get; set; }
+
     }
 }

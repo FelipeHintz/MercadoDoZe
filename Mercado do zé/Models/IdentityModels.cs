@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity.EntityFramework;
+using System.Data.Entity;
 
 namespace Mercado_do_zé.Models
 {
@@ -9,6 +10,12 @@ namespace Mercado_do_zé.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
+
+        //!TODO
+
         public ApplicationDbContext()
             : base("DefaultConnection")
         {

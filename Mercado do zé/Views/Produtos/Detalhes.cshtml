@@ -1,0 +1,23 @@
+﻿
+@model Mercado_do_zé.Models.Produto
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <h2>@Model.Nome</h2>
+    <p>Informações do produto:</p>
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="@Model.EnderecoImagem"/>
+        </div>
+        <div class="col-sm-8">
+            <p><span style="color: #317eac;">ID:</span> @Model.Id</p>
+            <p><span style="color: #317eac;">Nome:</span> @Model.Nome</p>
+            <p><span style="color: #317eac;">Descrição:</span> @Model.Descrição</p>
+            <p><span style="color: #317eac;">Valor:</span> R$ @Model.Valor</p>
+            <p><span style="color: #317eac;">Quantidade disponivel:</span> @Model.Quantidade</p>
+        </div>
+    </div>
