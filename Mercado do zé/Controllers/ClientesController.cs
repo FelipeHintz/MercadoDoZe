@@ -8,36 +8,36 @@ using System.Data.Entity;
 
 namespace Mercado_do_zé.Controllers
 {
-    public class ClientesController : Controller
-    {
-        private ApplicationDbContext _context;
+	public class ClientesController : Controller
+	{
+		private ApplicationDbContext _context;
 
-        public ClientesController()
-        {
-            _context = new ApplicationDbContext();
-        }
+		public ClientesController()
+		{
+			_context = new ApplicationDbContext();
+		}
 
-        protected override void Dispose(bool disposing)
-        {
-            _context.Dispose();
-        }
+		protected override void Dispose(bool disposing)
+		{
+			_context.Dispose();
+		}
 
-        public ActionResult Index()
-        {
-            var clientes = _context.Clientes.ToList();
+		public ActionResult Index()
+		{
+			var clientes = _context.Clientes.ToList();
 
-            return View(clientes);
-        }
+			return View(clientes);
+		}
 
-        public ActionResult Detalhes(int id)
-        {
-            var cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
+		public ActionResult Detalhes(int id)
+		{
+			var cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
 
-            if (cliente == null)
-                return HttpNotFound();
+			if (cliente == null)
+				return HttpNotFound();
 
-            return View(cliente);
-        }
+			return View(cliente);
+		}
 
 	}
 }

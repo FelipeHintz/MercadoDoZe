@@ -174,6 +174,10 @@
     <Compile Include="Migrations\201709060057010_CorrectProdutosTableName.Designer.cs">
       <DependentUpon>201709060057010_CorrectProdutosTableName.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709070023539_populateDatabase.cs" />
+    <Compile Include="Migrations\201709070023539_populateDatabase.Designer.cs">
+      <DependentUpon>201709070023539_populateDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -253,6 +257,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709060057010_CorrectProdutosTableName.resx">
       <DependentUpon>201709060057010_CorrectProdutosTableName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709070023539_populateDatabase.resx">
+      <DependentUpon>201709070023539_populateDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
