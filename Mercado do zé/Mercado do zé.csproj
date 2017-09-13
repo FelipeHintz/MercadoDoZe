@@ -178,6 +178,14 @@
     <Compile Include="Migrations\201709070023539_populateDatabase.Designer.cs">
       <DependentUpon>201709070023539_populateDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709130036145_teste.cs" />
+    <Compile Include="Migrations\201709130036145_teste.Designer.cs">
+      <DependentUpon>201709130036145_teste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201709130051354_teste1-1-21.cs" />
+    <Compile Include="Migrations\201709130051354_teste1-1-21.Designer.cs">
+      <DependentUpon>201709130051354_teste1-1-21.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Cliente.cs" />
@@ -260,6 +268,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201709070023539_populateDatabase.resx">
       <DependentUpon>201709070023539_populateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709130036145_teste.resx">
+      <DependentUpon>201709130036145_teste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709130051354_teste1-1-21.resx">
+      <DependentUpon>201709130051354_teste1-1-21.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

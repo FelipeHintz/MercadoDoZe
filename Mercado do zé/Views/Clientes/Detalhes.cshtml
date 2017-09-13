@@ -6,5 +6,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>@Model.Nome</h2>
+<div class="container-fluid">
+    <h2>@Model.Nome</h2>
+    <p>Informações do cliente:</p>
+    <div class="row">
+        <div class="col-sm-4">
+            <img src="@Model.EnderecoImagem" />
+        </div>
+        <div class="col-sm-8">
+            <p><span style="color: #317eac;">ID:</span> @Model.Id</p>
+            <p><span style="color: #317eac;">Nome:</span> @Model.Nome</p>
+            <p><span style="color: #317eac;">Descrição:</span> @Model.Descricao</p>
+        </div>
+    </div>
+</div>
 

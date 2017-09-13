@@ -10,5 +10,7 @@ namespace Mercado_do_zé.Models
 
         public int Id { get; set; }
         public string Nome { get; set;}
+        public string EnderecoImagem { get; set;}
+        public string Descricao { get; set; }
     }
 }
