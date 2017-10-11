@@ -78,14 +78,13 @@ namespace Mercado_do_zé.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Novo()
+        public ActionResult Novo(Cliente cliente)
         {
-            var viewModel = new ClienteEditarViewModel
-            {
+            _context.Clientes.Add(cliente);
+            _context.SaveChanges();
+            // Voltamos para a lista de clientes
+            return RedirectToAction("Index");
 
-            };
-
-            return View("Editar", viewModel);
         }
 
 
