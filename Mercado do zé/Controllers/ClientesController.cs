@@ -55,6 +55,21 @@ namespace Mercado_do_zé.Controllers
             return View("Editar", viewModel);
         }
 
+        public ActionResult Deletar(int id)
+        {
+            var cliente = _context.Clientes.SingleOrDefault(c => c.Id == id);
+
+            if (cliente == null)
+                return HttpNotFound();
+
+
+            _context.Clientes.Remove(cliente);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+
+        }
+
         [HttpPost]
         public ActionResult Salvar(Cliente cliente) // recebemos um cliente
         {
@@ -78,12 +93,14 @@ namespace Mercado_do_zé.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Novo(Cliente cliente)
+        public ActionResult Novo()
         {
-            _context.Clientes.Add(cliente);
-            _context.SaveChanges();
-            // Voltamos para a lista de clientes
-            return RedirectToAction("Index");
+
+            var viewModel = new ClienteEditarViewModel {
+            
+
+            };
+            return View("Editar", viewModel);
 
         }
 
